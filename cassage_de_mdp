@@ -1,0 +1,32 @@
+LINUX
+
+head /etc/shadow 
+
+	"head" permet d'afficher les 10 premières lignes d'un fichier.
+	Le fichier "shadow" contient les comptes users et mdp séparés par ":"
+	Le paramètre "$6$"" indique un chiffrement en sha512 pour le mdp root
+
+grep 'root' /etc/shadow
+grep 'root\|zozo' /etc/shadow  			 "\|"="ou"
+
+	"grep" permet e faire une recherche dans un fichiersur base d'un motif
+	"ilqGY38D" ne fait pas parti du mdp. C'est le "salt" qui rend l'empreinte unique
+	Ce qui suit est l'empreinte du mdp
+
+apt install john
+
+	On installe un casseur de mdp
+
+john /etc/shadow
+
+	On lance le script
+
+	pwgen est générateur de mdp
+
+	
+
+WINDOWS cf 05-cassage de mdp
+
+Konboot
+Mimikatz
+Ophcrack
